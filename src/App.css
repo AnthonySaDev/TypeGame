@@ -1,0 +1,174 @@
+@font-face {
+  font-family: 'Joystix Mono';
+  src: url('../public/fonts/joystixmonospace.otf') format('opentype');
+}
+
+body {
+  margin: 0;
+}
+
+.App {
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Joystix Mono', monospace;
+  background: linear-gradient(to bottom right, #01460b, #042e00); 
+  overflow-x: hidden;
+  padding: 50px; 
+  flex-direction: column;
+  gap: 30px;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 60px; 
+  color: #fff;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 40px; 
+  max-width: 600px;
+  text-align: center;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px; 
+  background-color: #333;
+  color: #fff;
+}
+
+.close-button,
+.mute-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.mute-button:hover {
+  color: #f00;
+}
+
+.pre-game {
+  text-align: center;
+}
+
+.pre-game header {
+  margin-bottom: 40px; 
+}
+
+.pre-game h1 {
+  font-size: 3rem; 
+  color: #fff; 
+}
+
+.pre-game p {
+  font-size: 1.4rem;
+  color: #fff; 
+  margin-bottom: 40px; 
+}
+
+.social-icons {
+  margin-bottom: 40px; 
+}
+
+.social-icons a {
+  margin-right: 20px; 
+  color: #fff; 
+  font-size: 1.8rem; 
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #f00; 
+}
+
+.game-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px; 
+  flex-direction: column;
+  gap: 40px; 
+}
+
+.play-button {
+  padding: 20px 40px; 
+  background-color: #28a745;
+  color: #fff;
+  font-size: 2.5rem; 
+  border: none;
+  border-radius: 12px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Joystix Mono', monospace;
+}
+
+.play-button:hover {
+  background-color: #218838;
+}
+
+.mute-button-game {
+  border: none;
+  color: #fff;
+  font-size: 2rem; 
+  cursor: pointer;
+  transition: color 0.3s ease;
+  background-color: #0056b3;
+  padding: 15px 30px; 
+  border-radius: 12px;
+}
+
+.mute-button-game:hover {
+  color: #f00;
+}
+
+.scoreboard{
+  margin-bottom: 40px;
+  color: #fff;
+  font-size: 13px;
+  text-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #042e00;
+  padding: 20px;
+  border-radius: 12px
+}
+.empty-scoreboard{
+  display: flex;
+  font-size: 13px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}

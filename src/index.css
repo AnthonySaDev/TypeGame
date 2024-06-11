@@ -1,0 +1,194 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Press Start 2P';
+  src: url('https://fonts.gstatic.com/s/pressstart2p/v8/e3t4euGdV0FwFOLdaObKzMKxg2nEd6j_6Q.woff2') format('woff2');
+}
+
+.container {
+  width: 650px;
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: 3px solid #000;
+  background: #fff;
+  box-shadow: 0 8px #000;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  color: #000;
+  transition: all 0.1s ease-in-out;
+}
+
+.container:active {
+  box-shadow: 0 4px #000;
+  transform: translateY(4px);
+}
+
+.test {
+  user-select: none;
+}
+.title{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+input.input-field {
+  opacity: 0;
+  z-index: -999;
+  position: absolute;
+}
+
+span {
+  font-size: 20px;
+  user-select: none;
+  cursor: text;
+}
+
+span.active {
+  border-bottom: 3px solid blue;
+}
+
+span.correct {
+  color: darkgreen;
+  background: lightgreen;
+}
+
+span.wrong {
+  color: darkred;
+  background: pink;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #e7e9e9;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.progress {
+  height: 100%;
+  background-color: #049c13;
+  transition: width 1s linear;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 2px solid rgb(106, 106, 104);
+}
+
+.result p {
+  font-size: 15px;
+  margin: 5px;
+}
+
+button.btn {
+  padding: 15px;
+  margin: 10px;
+  outline: none;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #049c13;
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.5s;
+  font-family: 'Joystix Mono', monospace;
+}
+
+button.btn:hover {
+  background: #02500b;
+}
+
+.game-over {
+  font-size: 24px;
+  color: red;
+  font-weight: bold;
+}
+
+.card {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  margin: 5px;
+  border: 3px solid #000;
+  background-color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #000;
+  box-shadow: 0 4px #000;
+  transition: all 0.1s ease-in-out;
+}
+
+.card.active {
+  border-color: #00f;
+  background-color: rgb(11, 104, 50);
+  color: #fff;
+}
+
+.card.correct {
+  background-color: #0f0;
+  color: #000;
+}
+
+.card.wrong {
+  background-color: #f00;
+  color: #fff;
+}
+
+.card:active {
+  box-shadow: 0 2px #000;
+  transform: translateY(2px);
+}
+@media (max-width: 768px) {
+  .container {
+    width: 400px;
+  }
+  button.btn {
+    padding: 8px;
+    margin: 5px;
+    outline: none;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #049c13;
+    color: #fff;
+    font-size: 12px;
+    transition: all 0.5s;
+    font-family: 'Joystix Mono', monospace;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 355px;
+    padding: 10px;
+  }
+  button.btn {
+    padding: 8px;
+    margin: 5px;
+    outline: none;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #049c13;
+    color: #fff;
+    font-size: 10px;
+    transition: all 0.5s;
+    font-family: 'Joystix Mono', monospace;
+  }
+}
