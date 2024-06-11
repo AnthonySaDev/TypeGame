@@ -5,7 +5,11 @@ import { RiVolumeMuteFill, RiVolumeUpFill } from 'react-icons/ri';
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
 import { toggleAudio } from './utils/toggleAudio';
-
+interface ScoreboardItem {
+  id: string;
+  name: string;
+  score: number;
+}
 const App: React.FC = () => {
   const [isGameVisible, setIsGameVisible] = useState(false);
   const [isMuted, setIsMuted] = useState(localStorage.getItem('isMuted') === 'true');
@@ -29,7 +33,7 @@ const App: React.FC = () => {
     const scoreboardData = localStorage.getItem('scores');
     if (scoreboardData) {
       const parsedScoreboard = JSON.parse(scoreboardData);
-      parsedScoreboard.sort((a, b) => b.score - a.score);
+      parsedScoreboard.sort((a: ScoreboardItem, b: ScoreboardItem) => b.score - a.score);
       setScoreboard(parsedScoreboard);
     }
   }, [isGameVisible]);
