@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: 'Press Start 2P';
-  src: url('https://fonts.gstatic.com/s/pressstart2p/v8/e3t4euGdV0FwFOLdaObKzMKxg2nEd6j_6Q.woff2') format('woff2');
-}
-
 .container {
   width: 650px;
   margin: 20px auto;
@@ -19,7 +14,6 @@
   background: #fff;
   box-shadow: 0 8px #000;
   text-align: center;
-  font-family: 'Press Start 2P', cursive;
   color: #000;
   transition: all 0.1s ease-in-out;
 }
