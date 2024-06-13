@@ -23,7 +23,7 @@ Bem-vindo ao **Minigame de Reação e Velocidade**, um jogo desenvolvido em Reac
 
 Clique no botão abaixo para começar a desafiar suas habilidades de reação!
 
-[Começar Jogo](#https://type-game-adventure.vercel.app/)
+[Começar Jogo](https://type-game-adventure.vercel.app/)
 
 **Divirta-se jogando!**
 
