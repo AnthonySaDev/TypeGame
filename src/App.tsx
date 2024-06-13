@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TypingTest from './components/TypingTest/TypingTest';
-import { FaFacebook, FaInstagram, FaLinkedin, FaPlay, FaTimes, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaPlay, FaTwitter } from 'react-icons/fa';
 import { RiVolumeMuteFill, RiVolumeUpFill } from 'react-icons/ri';
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
@@ -57,13 +57,10 @@ const App: React.FC = () => {
         {!isGameVisible && (
           <motion.div
             className="pre-game"
-            initial={{ y: '100%' }}
-            animate={{ y: 0 }}
-            exit={{ y: '-100%', opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 120, damping: 20 }}
+            initial={{ y: '-100%' }}
+            animate={{ y: 0, transition: { duration: 0.5, type: 'tween' } }}
+            exit={{ y: '100%', opacity: 0, transition: { duration: 0.5, type: 'tween', ease: 'easeInOut' } }}
           >
-     
-
             <header>
               <h1 className="main-title">Desafio de Digitação </h1>
               <p className="description">Clique no botão abaixo para iniciar!</p>
@@ -86,18 +83,13 @@ const App: React.FC = () => {
         {isGameVisible && (
           <motion.div
             className="game"
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ type: 'spring', stiffness: 100, damping: 20, mass: 0.5, duration: 0.5 }}
-          >
+            initial={{ opacity: 0, y: '100%' }}
+            animate={{ opacity: 1, y: 0, transition: { duration: 1.5, type: 'tween' } }}
+            exit={{ opacity: 0, y: '100%', transition: { duration: 1.5, type: 'tween', ease: 'easeInOut' } }}          >
             <div className="game-header">
               <h2>Desafio de Digitação</h2>
-              <button className="close-button" onClick={handleCloseClick}>
-                <FaTimes />
-              </button>
             </div>
-            <TypingTest />
+            <TypingTest handleClose={handleCloseClick}/>
             <button className="mute-button-game" onClick={handleToggleMute}>
               {isMuted ? <RiVolumeMuteFill /> : <RiVolumeUpFill />}
             </button>

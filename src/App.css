@@ -44,7 +44,6 @@ body {
   color: #ff9900; 
 }
 
-.close-button,
 .mute-button {
   background: none;
   border: none;
@@ -52,6 +51,18 @@ body {
   font-size: .9rem;
   cursor: pointer;
   transition: color 0.3s ease;
+}
+
+.close-button{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #ff9900;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  background: none;
+  border: none
 }
 
 .close-button:hover,

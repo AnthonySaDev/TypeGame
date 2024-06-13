@@ -6,7 +6,13 @@ import { generateRandomParagraph } from '../../utils/generateRandomParagraph';
 import { resetTest } from '../../utils/resetTest';
 import { playAudio } from '../../utils/playAudio';
 import './styles.css'
-const TypingTest: React.FC = () => {
+
+interface TypingTestProps {
+  handleClose: () => void;
+}
+
+
+const TypingTest: React.FC<TypingTestProps> = ({handleClose}) => {
   const initialMaxTime = 20;
   const [maxTime, setMaxTime] = useState<number>(initialMaxTime);
   const [timeLeft, setTimeLeft] = useState<number>(initialMaxTime);
@@ -22,6 +28,7 @@ const TypingTest: React.FC = () => {
   const charRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const [correctWrong, setCorrectWrong] = useState<string[]>(Array(paragraph.length).fill(''));
   const [timeIsUp, setTimeIsUp] = useState<boolean>(false);
+
 
   useEffect(() => {
     if (inputRef.current) {
@@ -124,7 +131,14 @@ const TypingTest: React.FC = () => {
     }
   };
 
+const handleCloseClick = () => {
+  resetTest(setParagraph, initialMaxTime, setMaxTime, setTimeLeft, setMistakes, setCharIndex, setIsTyping, setWpm, setCpm, setCorrectWrong, charRefs, setTimeIsUp, inputRef, setScore, setCountWords);  
+  handleClose();
+};
+
   return (
+    <>
+      <button className="close-button" onClick={handleCloseClick}>X</button>
     <motion.div className="container"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -183,6 +197,7 @@ const TypingTest: React.FC = () => {
         </button>
       </motion.div>
     </motion.div>
+    </>
   );
 };
 
