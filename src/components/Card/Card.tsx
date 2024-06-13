@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { motion } from 'framer-motion';
-
+import './styles.css'
 interface CardProps {
   char: string;
   isActive: boolean;

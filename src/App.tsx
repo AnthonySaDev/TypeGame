@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import TypingTest from './components/TypingTest/TypingTest';
-import { FaFacebook, FaInstagram, FaLinkedin, FaPlay, FaTimes, FaTrophy, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaPlay, FaTimes, FaTwitter } from 'react-icons/fa';
 import { RiVolumeMuteFill, RiVolumeUpFill } from 'react-icons/ri';
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
 import { toggleAudio } from './utils/toggleAudio';
+import ScoreBoard from './components/ScoreBoard/ScoreBoard';
 interface ScoreboardItem {
   id: string;
   name: string;
@@ -64,30 +65,16 @@ const App: React.FC = () => {
      
 
             <header>
-              <h1 className="main-title">Desafio de Digitação <br></br> Aventura na Selva</h1>
-              <p className="description">Você foi parar em uma selva misteriosa. Para sair, você precisa desvendar os segredos antigos digitando corretamente os encantamentos!</p>
-              <div className="social-icons">
-                <a href="https://www.facebook.com/anthonysareis" target="_blank" rel="noopener noreferrer">
-                  <FaFacebook color="#3b5998" size={24} />
-                </a>
-                <a href="https://www.twitter.com/AnthonySaReis1" target="_blank" rel="noopener noreferrer">
-                  <FaTwitter color="#1da1f2" size={24} />
-                </a>
-                <a href="https://www.instagram.com/anthonysareis" target="_blank" rel="noopener noreferrer">
-                  <FaInstagram color="#c13584" size={24} />
-                </a>
-                <a href="https://www.linkedin.com/in/anthony-sa-reis/" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin color="#1da1f2" size={24} />
-                </a>
-              </div>
+              <h1 className="main-title">Desafio de Digitação </h1>
+              <p className="description">Clique no botão abaixo para começar!</p>
             </header>
-
-     
 
             <main className="game-buttons">
               <button className="play-button" onClick={handlePlayClick}>
-                <FaPlay /> Explorar a Selva
+                <FaPlay /> JOGAR
               </button>
+              <ScoreBoard scoreboard={scoreboard} />
+
               <button className="mute-button-game" onClick={handleToggleMute}>
                 {isMuted ? <RiVolumeMuteFill /> : <RiVolumeUpFill />}
               </button>
@@ -118,23 +105,23 @@ const App: React.FC = () => {
         )}
  
       </AnimatePresence>
-      <div className="scoreboard">
-          <h2>Scoreboard</h2>
-          {scoreboard.length > 0 ? (
-            <ul>
-              {scoreboard.map(({ id, name, score }) => (
-                <li key={id}>
-                  {name}: {score}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <div className="empty-scoreboard">
-              <FaTrophy size={40}/> 
-              <p>Nenhum score registrado ainda. Seja o primeiro!</p>
-            </div>
-          )}
-      </div>
+      <div className="social-icons">
+                <a href="https://www.facebook.com/anthonysareis" target="_blank" rel="noopener noreferrer">
+                  <FaFacebook color="#3b5998" size={24} />
+                </a>
+                <a href="https://www.twitter.com/AnthonySaReis1" target="_blank" rel="noopener noreferrer">
+                  <FaTwitter color="#1da1f2" size={24} />
+                </a>
+                <a href="https://www.instagram.com/anthonysareis" target="_blank" rel="noopener noreferrer">
+                  <FaInstagram color="#c13584" size={24} />
+                </a>
+                <a href="https://www.linkedin.com/in/anthony-sa-reis/" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin color="#1da1f2" size={24} />
+                </a>
+              </div>
+      <footer>
+        <p className="copyright">&copy; 2024 Anthony Sa Reis. Todos os direitos reservados.</p>
+      </footer>
     </div>
   );
 }

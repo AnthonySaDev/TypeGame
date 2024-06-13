@@ -5,7 +5,7 @@ import Card from '../Card/Card';
 import { generateRandomParagraph } from '../../utils/generateRandomParagraph';
 import { resetTest } from '../../utils/resetTest';
 import { playAudio } from '../../utils/playAudio';
-
+import './styles.css'
 const TypingTest: React.FC = () => {
   const initialMaxTime = 20;
   const [maxTime, setMaxTime] = useState<number>(initialMaxTime);
@@ -73,8 +73,7 @@ const TypingTest: React.FC = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const characters = charRefs.current;
     const currentChar = characters[charIndex];
-    const typedChar = e.target.value.slice(-1);
-
+    const typedChar = e.target.value.slice(-1).toLocaleLowerCase();
     if (charIndex < characters.length && timeLeft > 0) {
       if (!isTyping) {
         setIsTyping(true);
@@ -145,7 +144,7 @@ const TypingTest: React.FC = () => {
           <motion.span className='game-over'
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            transition={{ type: 'spring', duration: 0.5 }}
+            transition={{ type: 'spring', duration: 0.8 }}
           >
             Fim de Jogo!
           </motion.span>

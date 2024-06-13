@@ -1,0 +1,121 @@
+
+.container {
+  width: 650px;
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: 3px solid #333;
+  background: #111;
+  box-shadow: 0 8px #333;
+  text-align: center;
+  color: #fff;
+  transition: all 0.1s ease-in-out;
+}
+
+.container:active {
+  box-shadow: 0 4px #333;
+  transform: translateY(4px);
+}
+
+.test {
+  user-select: none;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+input.input-field {
+  opacity: 0;
+  z-index: -999;
+  position: absolute;
+}
+
+span {
+  font-size: 20px;
+  user-select: none;
+  cursor: text;
+}
+
+span.active {
+  border-bottom: 3px solid #00f;
+}
+
+span.correct {
+  color: #0f0;
+  background: #002200;
+}
+
+span.wrong {
+  color: #f00;
+  background: #220000;
+}
+
+
+.result {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 10px; 
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 2px solid #666;
+}
+
+.result p {
+  font-size: 15px;
+  margin: 5px;
+}
+
+button.btn {
+  grid-column: span 2; 
+  padding: 15px;
+  margin: 10px auto; 
+  outline: none;
+  border: 1px solid #666;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #049c13;
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.5s;
+  max-width: 100%; 
+  box-sizing: border-box;
+}
+
+button.btn:hover {
+  background: #02500b;
+}
+
+
+.game-over {
+  font-size: 24px;
+  color: red;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 400px;
+  }
+  button.btn {
+    padding: 8px;
+    margin: 5px;
+    font-size: 12px;
+    max-width: 100%; 
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 355px;
+    padding: 10px;
+  }
+  button.btn {
+    padding: 8px;
+    margin: 5px;
+    font-size: 10px;
+    max-width: 100%; 
+  }
+}

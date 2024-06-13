@@ -1,0 +1,38 @@
+.card {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  margin: 5px;
+  border: 3px solid #333;
+  background-color: #111;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px #333;
+  transition: all 0.1s ease-in-out;
+}
+
+.card.active {
+  border-color: #00f;
+  background-color: #012912;
+  color: #fff;
+}
+
+.card.correct {
+  background-color: #0f0;
+  color: #000;
+}
+
+.card.wrong {
+  background-color: #f00;
+  color: #fff;
+}
+
+.card:active {
+  box-shadow: 0 2px #333;
+  transform: translateY(2px);
+}
