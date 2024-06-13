@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  background-color: #000;
-  color: #fff;
+  background-color: #222; /* Dark gray background */
+  color: #fff; /* White text */
 }
 
 .App {
@@ -10,9 +10,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom right, #003300, #002200); 
+  background: linear-gradient(to bottom right, #004466, #002233);
   overflow-x: hidden;
-  padding: 50px; 
+  padding: 50px;
   flex-direction: column;
   gap: 30px;
 }
@@ -21,43 +21,42 @@ body {
   text-align: center;
   font-size: 1.4rem;
   margin-bottom: 60px;
-  background: linear-gradient(45deg, #00ff00, #20f19a, #17f888); 
+  background: linear-gradient(45deg, #ff9900, #ff33cc, #ff66ff); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-
 .description {
   font-size: 1rem;
-  margin-bottom: 40px; 
+  margin-bottom: 40px;
   max-width: 600px;
   text-align: center;
   margin: 0 auto;
-  color: #00ff00;
+  color: #ff9900; /* Orange */
 }
 
 .game-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px; 
-  background-color: #333;
-  color: #00ff00;
+  padding: 20px;
+  background-color: #444; 
+  color: #ff9900; 
 }
 
 .close-button,
 .mute-button {
   background: none;
   border: none;
-  color: #00ff00;
-  font-size: 1.1rem;
+  color: #ff9900; 
+  font-size: .9rem;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .close-button:hover,
 .mute-button:hover {
-  color: #ff0000;
+  color: #ff3333;
 }
 
 .pre-game {
@@ -65,78 +64,77 @@ body {
 }
 
 .pre-game header {
-  margin-bottom: 40px; 
+  margin-bottom: 40px;
 }
 
 .pre-game h1 {
-  font-size: 2.2rem; 
-  color: #00ff00; 
+  font-size: 2.2rem;
+  color: #ff9900; 
 }
 
 .pre-game p {
   font-size: 1.2rem;
-  color: #00ff00; 
-  margin-bottom: 40px; 
+  color: #ff9900; 
+  margin-bottom: 40px;
 }
 
 .social-icons {
-  margin-bottom: 40px; 
+  margin-bottom: 40px;
 }
 
 .social-icons a {
-  margin-right: 20px; 
-  color: #00ff00; 
-  font-size: 1.4rem; 
+  margin-right: 20px;
+  color: #ff9900; 
+  font-size: 1.4rem;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: #ff0000; 
+  color: #ff3333; 
 }
 
 .game-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px; 
+  margin-top: 40px;
   flex-direction: column;
-  gap: 40px; 
+  gap: 40px;
 }
 
 .play-button {
-  padding: 20px 40px; 
-  background-color: #006600;
+  padding: 20px 40px;
+  background-color: #009933; 
   color: #fff;
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
   border: none;
-  border-radius: 12px; 
+  border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .play-button:hover {
-  background-color: #004d00;
+  background-color: #007722; 
 }
 
 .mute-button-game {
   border: none;
   color: #fff;
-  font-size: 2rem; 
+  font-size: 1.2rem;
   cursor: pointer;
   transition: color 0.3s ease;
-  background-color: #004d00;
-  padding: 15px 30px; 
+  background-color: #007722; 
+  padding: 10px 15px;
   border-radius: 12px;
 }
 
 .mute-button-game:hover {
-  color: #ff0000;
+  color: #ff3333; 
 }
 
-.copyright{
-  color: #00ff00;
+.copyright {
+  color: #ff9900; 
   font-size: 10px;
   text-align: center;
-
 }

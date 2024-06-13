@@ -1,5 +1,4 @@
 import React, { forwardRef } from 'react';
-import { motion } from 'framer-motion';
 import './styles.css'
 interface CardProps {
   char: string;
@@ -9,15 +8,12 @@ interface CardProps {
 
 const Card: React.ForwardRefRenderFunction<HTMLSpanElement, CardProps> = ({ char, isActive, isCorrect }, ref) => {
   return (
-    <motion.span 
+    <span 
     className={`card ${isActive ? 'active' : ''} ${isCorrect}`} 
     ref={ref}
-    initial={{ rotate: 0 }}
-    animate={{ rotate: isActive ? [0, -5, 0, 5, 0] : 0 }}
-    transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
     >
       {char}
-    </motion.span>
+    </span>
   );
 };
 

@@ -1,6 +1,6 @@
 .scoreboard {
   margin-bottom: 40px;
-  color: #00ff00;
+  color: #ff9900; 
   font-size: 12px;
   text-align: start;
   display: flex;
@@ -8,9 +8,20 @@
   align-items: center;
   flex-direction: column;
   gap: 40px;
-  background-color: #002200;
+  background-color: #004466;
   padding: 15px;
   border-radius: 12px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.title{
+  text-align: center;
+  font-size: 1.3rem;
+  color: #ff66ff; 
+  background-color: #004466;
+  padding: 15px;
+  border-radius: 12px;
+  text-transform: uppercase;
 }
 
 .empty-scoreboard {
@@ -40,13 +51,13 @@ li {
   justify-content: center;
   align-items: center;
   margin: 20px 10px;
-  gap:15px
+  gap: 15px;
 }
 
 .page-button {
   padding: 10px 20px;
   margin: 0 5px;
-  background-color: #006600;
+  background-color: #009933; 
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -55,11 +66,10 @@ li {
 }
 
 .page-button:hover {
-  background-color: #004d00;
+  background-color: #007722; 
 }
 
 .page-button:disabled {
   background-color: #999;
   cursor: not-allowed;
 }
-

@@ -32,7 +32,7 @@ const ScoreBoard: React.FC<ScoreBoardProps> = ({ scoreboard }) => {
 
   return (
     <div className="scoreboard">
-      <h2>Scoreboard</h2>
+      <h2 className="title">Scoreboard</h2>
       {currentItems.length > 0 ? (
         <ul>
           {currentItems.map(({ id, name, score }) => (

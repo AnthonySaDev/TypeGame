@@ -57,16 +57,16 @@ const App: React.FC = () => {
         {!isGameVisible && (
           <motion.div
             className="pre-game"
-            initial={{ x: '-100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '-100%' }}
-            transition={{ type: 'spring', duration: 0.5 }}
+            initial={{ y: '100%' }}
+            animate={{ y: 0 }}
+            exit={{ y: '-100%', opacity: 0 }}
+            transition={{ type: 'spring', stiffness: 120, damping: 20 }}
           >
      
 
             <header>
               <h1 className="main-title">Desafio de Digitação </h1>
-              <p className="description">Clique no botão abaixo para começar!</p>
+              <p className="description">Clique no botão abaixo para iniciar!</p>
             </header>
 
             <main className="game-buttons">
@@ -86,10 +86,10 @@ const App: React.FC = () => {
         {isGameVisible && (
           <motion.div
             className="game"
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'keyframes', duration: 0.5 }}
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', stiffness: 100, damping: 20, mass: 0.5, duration: 0.5 }}
           >
             <div className="game-header">
               <h2>Desafio de Digitação</h2>
