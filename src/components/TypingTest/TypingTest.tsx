@@ -93,8 +93,8 @@ const TypingTest: React.FC = () => {
           });
           setParagraph(newParagraph);
           setCharIndex(0);
-          setMaxTime((prevMaxTime) => Math.max(5, prevMaxTime - 15));
-          setTimeLeft(Math.max(5, maxTime - 15));
+          setMaxTime((prevMaxTime) => Math.max(5, prevMaxTime  * 0.6));
+          setTimeLeft(Math.max(5, maxTime * 0.6));
           calculateScore();
         } else {
           setCharIndex((prevIndex) => prevIndex + 1);
