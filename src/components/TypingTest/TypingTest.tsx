@@ -9,10 +9,11 @@ import './styles.css'
 
 interface TypingTestProps {
   handleClose: () => void;
+  difficulty: string;
 }
 
 
-const TypingTest: React.FC<TypingTestProps> = ({handleClose}) => {
+const TypingTest: React.FC<TypingTestProps> = ({handleClose, difficulty}) => {
   const initialMaxTime = 20;
   const [maxTime, setMaxTime] = useState<number>(initialMaxTime);
   const [timeLeft, setTimeLeft] = useState<number>(initialMaxTime);
@@ -23,7 +24,7 @@ const TypingTest: React.FC<TypingTestProps> = ({handleClose}) => {
   const [cpm, setCpm] = useState<number>(0);
   const [countWords, setCountWords] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
-  const [paragraph, setParagraph] = useState<string>(generateRandomParagraph(6));
+  const [paragraph, setParagraph] = useState<string>(generateRandomParagraph(6, difficulty));
   const inputRef = useRef<HTMLInputElement>(null);
   const charRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const [correctWrong, setCorrectWrong] = useState<string[]>(Array(paragraph.length).fill(''));
@@ -62,6 +63,7 @@ const TypingTest: React.FC<TypingTestProps> = ({handleClose}) => {
       const userScore = {
         id: `score-${now.getTime()}`,
         name: `Played at ${now.getHours()}h${now.getMinutes()}`,
+        difficulty: difficulty,
         score: score
       };
       const scores = JSON.parse(localStorage.getItem('scores') || '[]');
@@ -80,7 +82,7 @@ const TypingTest: React.FC<TypingTestProps> = ({handleClose}) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const characters = charRefs.current;
     const currentChar = characters[charIndex];
-    const typedChar = e.target.value.slice(-1).toLocaleLowerCase();
+    const typedChar = e.target.value.slice(-1).toLocaleUpperCase();
     if (charIndex < characters.length && timeLeft > 0) {
       if (!isTyping) {
         setIsTyping(true);
@@ -90,7 +92,7 @@ const TypingTest: React.FC<TypingTestProps> = ({handleClose}) => {
         if (charIndex === characters.length - 1) {
           setIsTyping(false);
           playAudio('/songs/correct.wav');
-          const newParagraph = generateRandomParagraph(6);
+          const newParagraph = generateRandomParagraph(6, difficulty);
           setCountWords((prevCount) => prevCount + 1);
           newCorrectWrong = Array(newParagraph.length).fill('');
           charRefs.current.forEach((charRef) => {
@@ -132,7 +134,7 @@ const TypingTest: React.FC<TypingTestProps> = ({handleClose}) => {
   };
 
 const handleCloseClick = () => {
-  resetTest(setParagraph, initialMaxTime, setMaxTime, setTimeLeft, setMistakes, setCharIndex, setIsTyping, setWpm, setCpm, setCorrectWrong, charRefs, setTimeIsUp, inputRef, setScore, setCountWords);  
+  resetTest(setParagraph, initialMaxTime, setMaxTime, setTimeLeft, setMistakes, setCharIndex, setIsTyping, setWpm, setCpm, setCorrectWrong, charRefs, setTimeIsUp, inputRef, setScore, setCountWords, difficulty);  
   handleClose();
 };
 
@@ -146,8 +148,8 @@ const handleCloseClick = () => {
       transition={{ duration: 0.5 }}
       onClick={handleContainerClick}
     >
-      <h1 className='title'>{timeIsUp ? 'Você perdeu!' : 'Digite'}</h1>
-      <div className="test">
+    <h1 className='title'>{timeIsUp ? 'Você perdeu!' : "Digite"}</h1>
+  <div className="test">
         <input
           type="text"
           className="input-field"
@@ -192,7 +194,7 @@ const handleCloseClick = () => {
         <p>
           Pontuação: <strong>{score.toFixed(2)}</strong>
         </p>
-        <button className="btn" onClick={() => resetTest(setParagraph, initialMaxTime, setMaxTime, setTimeLeft, setMistakes, setCharIndex, setIsTyping, setWpm, setCpm, setCorrectWrong, charRefs, setTimeIsUp, inputRef, setScore, setCountWords)}>
+        <button className="btn" onClick={() => resetTest(setParagraph, initialMaxTime, setMaxTime, setTimeLeft, setMistakes, setCharIndex, setIsTyping, setWpm, setCpm, setCorrectWrong, charRefs, setTimeIsUp, inputRef, setScore, setCountWords, difficulty)}>
           Reiniciar
         </button>
       </motion.div>

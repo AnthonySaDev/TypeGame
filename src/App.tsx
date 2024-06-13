@@ -15,7 +15,8 @@ const App: React.FC = () => {
   const [isGameVisible, setIsGameVisible] = useState(false);
   const [isMuted, setIsMuted] = useState(localStorage.getItem('isMuted') === 'true');
   const [audio] = useState(new Audio('/songs/background.wav'));
-  const [scoreboard, setScoreboard] = useState<{ id: string; name: string; score: number }[]>([]);
+  const [scoreboard, setScoreboard] = useState<{ id: string; name: string; score: number; difficulty: string }[]>([]);
+  const [dificulty, setDificulty] = useState('facil');
 
   useEffect(() => {
     toggleAudio(audio, isMuted);
@@ -70,6 +71,13 @@ const App: React.FC = () => {
               <button className="play-button" onClick={handlePlayClick}>
                 <FaPlay /> JOGAR
               </button>
+              <select value={dificulty} onChange={(e) => setDificulty(e.target.value)} className="select-dificulty">
+                <option value="facil ">Fácil</option>
+                <option value="normal">Normal</option>
+                <option value="dificil">Difícil</option>
+                <option value="muitoDificil">Muito Difícil</option>
+            </select>
+
               <ScoreBoard scoreboard={scoreboard} />
 
               <button className="mute-button-game" onClick={handleToggleMute}>
@@ -89,7 +97,7 @@ const App: React.FC = () => {
             <div className="game-header">
               <h2>Desafio de Digitação</h2>
             </div>
-            <TypingTest handleClose={handleCloseClick}/>
+            <TypingTest handleClose={handleCloseClick} difficulty={dificulty} />
             <button className="mute-button-game" onClick={handleToggleMute}>
               {isMuted ? <RiVolumeMuteFill /> : <RiVolumeUpFill />}
             </button>

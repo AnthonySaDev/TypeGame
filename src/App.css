@@ -44,6 +44,26 @@ body {
   color: #ff9900; 
 }
 
+.select-dificulty{
+  background-color: #444;
+  color: #ff9900;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.option{
+  color: #ff9900;
+  background-color: #444;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
 .mute-button {
   background: none;
   border: none;

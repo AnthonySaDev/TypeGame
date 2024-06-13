@@ -1,7 +1,7 @@
 .scoreboard {
   margin-bottom: 40px;
   color: #ff9900; 
-  font-size: 12px;
+  font-size: 14px;
   text-align: start;
   display: flex;
   justify-content: center;
@@ -12,6 +12,31 @@
   padding: 15px;
   border-radius: 12px;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+.difficulty-buttons{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.difficulty-buttons button {
+  padding: 10px 20px;
+  font-size: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ff66ff;
+  color: #fff;
+}
+
+.difficulty-buttons button:hover {
+  background-color: #a507a5;
+}
+
+.difficulty-buttons button.selected {
+  background-color: #a507a5;
 }
 
 .title{
@@ -24,15 +49,26 @@
   text-transform: uppercase;
 }
 
+.medal{
+  color: #009933;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.scoreboard-list,
 .empty-scoreboard {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  padding: 20px;
+  padding: 15px;
+  font-size: 14px;
 }
-
+.page-info{
+  text-align: center;
+  font-size: 12px;
+}
 ul {
   list-style: none;
   padding: 0;

@@ -16,8 +16,9 @@ export const resetTest = (
   inputRef: React.RefObject<HTMLInputElement>,
   setScore: React.Dispatch<React.SetStateAction<number>>,
   setCountWords: React.Dispatch<React.SetStateAction<number>>,
+  difficulty: string
 ) => {
-  const newParagraph = generateRandomParagraph(6);
+  const newParagraph = generateRandomParagraph(6, difficulty);
   setParagraph(newParagraph);
   setMaxTime(initialMaxTime);
   setTimeLeft(initialMaxTime);
